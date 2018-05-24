@@ -4,6 +4,7 @@
 1. Give an overview of the different options available for loops in JavaScript
 2. Explain the uses of each type of loop
 
+## Using JavaScript loops
 Loops are a common function in programming. Though the syntax varies for each language, the concept is the same. JavaScript has a number of loops that you can leverage, depending on what is trying to be achieved with the function.
 
 With loops, we can iterate over datasets and manipulate the data. For example, let's assume we have a list of the Billboad 100's top 100 songs and artists in descending rank order from an API endpoint. We're only going to use 10 in these static examples, because 100 is a lot! 
