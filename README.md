@@ -8,6 +8,14 @@ Loops are a common function in programming. Though the syntax varies for each la
 
 With loops, we can iterate over datasets and manipulate the data. For example, let's assume we have a list of the Billboad 100's top 100 songs and artists in descending rank order from an API endpoint. We're only going to use 10 in these static examples, because 100 is a lot! 
 
+```
+var billboard100 =
+["This Is America - Childish Gambino", "Nice For What - Drake",
+"God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
+"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+```
+
 In some loops, we must initialize a variable. The variable `i` in the following examples will be our initialization statement. This is a commonly defined variable that can be incremented over each iteration of the loop. This variable can be defined as anything--such as "j", "x", "y", or even "sasquatch" and "bananas", if using more semantic language is beneficial to your style of writing code.
 
 Loops will continue to run until the conditions are met. Fore example, the conditional statement of `i < 10` will be evaluated on each iteration of the loop. If the condition is `true`, the loop will continue. If the condition is `false`, for example, if `i` is now greater-than or equal to 5 after running the loop 4 times, the loop will not execute.
@@ -23,7 +31,8 @@ This example demonstrates what happens during the `while` loop. Since arrays sta
 var billboard100 =
 ["This Is America - Childish Gambino", "Nice For What - Drake",
 "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
-"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
+"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
 
 var i = 0
 while (i < billboard100.length) {
@@ -65,7 +74,8 @@ The `do...while` loop is similar to `while`, as in it will execute a block of co
 var billboard100 =
 ["This Is America - Childish Gambino", "Nice For What - Drake",
 "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
-"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
+"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
 
 var i=5;
 do{
@@ -95,7 +105,8 @@ Let's say that we only want the first 5 entries of the Billboard 100, because on
 var billboard100 =
 ["This Is America - Childish Gambino", "Nice For What - Drake",
 "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
-"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
+"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
 
 for (var i = 0; i < 5; i++) {
   console.log(billboard100[i]);
@@ -116,7 +127,8 @@ As you can see, the loop ran and printed only for the first 5 values, and not th
 var billboard100 =
 ["This Is America - Childish Gambino", "Nice For What - Drake",
 "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
-"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
+"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
 
 var top5 = []
 
