@@ -6,103 +6,117 @@
 
 Loops are a common function in programming. Though the syntax varies for each language, the concept is the same. JavaScript has a number of loops that you can leverage, depending on what is trying to be achieved with the function.
 
-In some loops, we must initialize a variable. The variable `i` in the following examples will be our initialization statement. This is a commonly defined variable that can be incremented over each iteration of the loop. This variable can be defined as anything--such as "sasquatch" or "bananas", if using more semantic language is beneficial to your style of writing code.
+With loops, we can iterate over datasets and manipulate the data. For example, let's assume we have a list of the Billboad 100's top 100 songs and artists in descending rank order from an API endpoint. We're only going to use 10 in these static examples, because 100 is a lot! 
 
-Loops will continue to run until the conditions are met. Fore example, the conditional statement of `i < 5` will be evaluated on each iteration of the loop. If the condition is `true`, the loop will continue. If the condition is `false`, for example, if `i` is now greater-than or equal to 5 after running the loop 4 times, the loop will not execute.
+In some loops, we must initialize a variable. The variable `i` in the following examples will be our initialization statement. This is a commonly defined variable that can be incremented over each iteration of the loop. This variable can be defined as anything--such as "j", "x", "y", or even "sasquatch" and "bananas", if using more semantic language is beneficial to your style of writing code.
+
+Loops will continue to run until the conditions are met. Fore example, the conditional statement of `i < 10` will be evaluated on each iteration of the loop. If the condition is `true`, the loop will continue. If the condition is `false`, for example, if `i` is now greater-than or equal to 5 after running the loop 4 times, the loop will not execute.
 
 ### The `while` loop
 ---
 The `while` loop is a pretty basic loop that is available in other programming languages as well. The loop will continue to be executed so long as the condition is true. In the below example, the variable `i` starts at 0, and will continue to increment until `i` is no longer less than 5. This loop will _start_ with 0, print the statement to the console, then increment the value of `i`. It will continue to 1, 2, 3, and so on, so the loop will run 5 times. Make _sure_ that the block contains code that will either break the loop, or change the condition so that it will eventually evaluate to false. Without this, an infinite loop will be created and this block will never stop executing!
 
-This example demonstrates what happens during the `while` loop:
-**Example**
-```
-var i = 0
-while (i < 5) {
-  console.log("I is less than 5");
-  i++; //this is necessary to avoid an infinite loop
-}
-```
-**Output**
-```
-I is less than 5
-I is less than 5
-I is less than 5
-I is less than 5
-I is less than 5
-```
-Here we have another simple example with the same logic:
-**Example**
-```
-var i = 0
-while (i < 5) {
-  console.log("The value of i is " + i);
-  i++; //this is necessary to avoid an infinite loop
-}
-```
-**Output**
-```
-The value of i is 0
-The value of i is 1
-The value of i is 2
-The value of i is 3
-The value of i is 4
-//the loop stops here because i is no longer less than 5
-```
-
-### The `do...while` loop
-The `do...while` loop is similar to `while`, as in it will execute a block of code based on a condition or set of conditions. It will execute at least once, and continue to execute if the condition is met
-
-**Example**
-```
-var i=5;
-do{
-    console.log("The value of i is " + i);
-    i++;
-}
-while(i>4 && i<10);
-```
-**Output**
-```
-The value of i is 5
-The value of i is 6
-The value of i is 7
-The value of i is 8
-The value of i is 9
-```
-### The `for` loop
----
-Another very common type of loop that can be found in JavaScript is the `for` loop. It is similar to the `while` loop, but runs "for" a specific number of times. For loops include 3 optional expressions to initialize the variable, declare the condition, and increment or decrement the variable all in the same line. It is easier to read and reduces the chance of error, as could be easily done in `while` and `do....while` loops where infinite loops can easily be created.
-
-With this type of loop, we have the initialization variable and the condition, as per normal, however, in the same line you will also define the `final-expression` which will increment or decrement the variable. The final expression executes at the end of each iteration of the loop automatically, and in this case, will increment by 1 each time until the condition `i < 5` is no longer met and returns `false`. 
-
-**Example**
-```
-var array = ["1st loop", "2nd loop", "3rd loop", "4th loop", "5th loop", "6th loop"]
-
-for (var i = 0; i < 5; i++) {
-  console.log(array[i]);
-}
-```
-**Output**
-```
-1st loop
-2nd loop
-3rd loop
-4th loop
-5th loop
-```
-As you can see, it ran and printed only for the first 5 values, and not the 6th value, because the condition for `i < 5` had already been met.
-
-Let's use a more tangible real-world example! Let's assume we have a list of the Billboad 100's top 100 songs and artists in descending rank order from an API endpoint. We're going to use 10 in this static example, because 100 is a lot! We only want the first 5, because on our site we want to display only the top 5 chart toppers in a sidebar somewhere with limited real estate.
+This example demonstrates what happens during the `while` loop. Since arrays start with an `index` of `0`, we are incrementing it by 1 in each string, so that the ranking of each entry is synced properly. We'll also print out what the current value of `i` is before it is displayed.
 
 **Example**
 ```
 var billboard100 =
 ["This Is America - Childish Gambino", "Nice For What - Drake",
 "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
-"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande",
-"Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+
+var i = 0
+while (i < billboard100.length) {
+  console.log(i)
+  console.log("The #" + (i+1) + " record is " + billboard100[i] );
+  i++; //this is necessary to avoid an infinite loop
+}
+```
+**Output**
+```
+0
+The #1 record is This Is America - Childish Gambino
+1
+The #2 record is Nice For What - Drake
+2
+The #3 record is God's Plan - Drake
+3
+The #4 record is Psycho - Post Malone Featuring Ty Dolla $ign
+4
+The #5 record is Meant To Be - Bebe Rexha & Florida Georgia Line
+5
+The #6 record is The Middle - Zedd, Maren Morris & Grey
+6
+10 The #7 record is No Tears Left To Cry - Ariana Grande
+7
+The #8 record is Look Alive - BlocBoy JB Featuring Drake
+8
+The #9 record is Never Be The Same - Camila Cabello
+9
+The #10 record is Perfect - Ed Sheeran
+//the loop will stop here because i is no longer less than 10
+```
+
+### The `do...while` loop
+The `do...while` loop is similar to `while`, as in it will execute a block of code based on a condition or set of conditions. It will execute at least once, and continue to execute if the condition is met. In this example, we will grab the the last 5 of the top 10 Billboard 100 songs:
+
+**Example**
+```
+var billboard100 =
+["This Is America - Childish Gambino", "Nice For What - Drake",
+"God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
+"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+
+var i=5;
+do{
+    console.log("The #" + (i+1) + " record is " + billboard100[i] );
+    i++;
+}
+while(i>4 && i<10);
+```
+**Output**
+```
+The #6 record is The Middle - Zedd, Maren Morris & Grey
+The #7 record is No Tears Left To Cry - Ariana Grande
+The #8 record is Look Alive - BlocBoy JB Featuring Drake
+The #9 record is Never Be The Same - Camila Cabello
+The #10 record is Perfect - Ed Sheeran
+```
+### The `for` loop
+---
+Another very common type of loop that can be found in JavaScript is the `for` loop. It is similar to the `while` loop, but runs "for" a specific number of times. For loops include 3 optional expressions to initialize the variable, declare the condition, and increment or decrement the variable all in the same line. It is easier to read and reduces the chance of error, as could be easily done in `while` and `do....while` loops where infinite loops can easily be created.
+
+With this type of loop, we have the initialization variable and the condition, as per normal, however, in the same line you will also define the `final-expression` which will increment or decrement the variable. The final expression executes at the end of each iteration of the loop automatically, and in this case, will increment by 1 each time until the condition is no longer met and returns `false`. 
+
+Let's say that we only want the first 5 entries of the Billboard 100, because on our site we want to display only the top 5 chart toppers in a sidebar somewhere with limited real estate.
+
+**Example**
+```
+var billboard100 =
+["This Is America - Childish Gambino", "Nice For What - Drake",
+"God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
+"Meant To Be - Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
+
+for (var i = 0; i < 5; i++) {
+  console.log(billboard100[i]);
+}
+```
+**Output**
+```
+This Is America - Childish Gambino
+Nice For What - Drake
+God's Plan - Drake
+Psycho - Post Malone Featuring Ty Dolla $ign
+Meant To Be - Bebe Rexha & Florida Georgia Line
+```
+As you can see, the loop ran and printed only for the first 5 values, and not the last 5 values, because the condition for `i < billboard100.length` had already been met, and `billboard100.length` is equal to `10`. 
+
+**Example**
+```
+var billboard100 =
+["This Is America - Childish Gambino", "Nice For What - Drake",
+"God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign",
+"Meant To Be -Bebe Rexha & Florida Georgia Line", "The Middle - Zedd, Maren Morris & Grey", "No Tears Left To Cry - Ariana Grande", "Look Alive - BlocBoy JB Featuring Drake", "Never Be The Same - Camila Cabello", "Perfect - Ed Sheeran"]
 
 var top5 = []
 
@@ -111,17 +125,18 @@ for (var i = 0; i < 5; i++) {
 }
 console.log(top5)
 ```
-This loop is going to grab the first 5 values in our `billboard100` array, and `push` them into a new array called `top5` that contains only our values for the top 5 songs, and log that `top5` array to our console.
+In this loop we add an extra step to grab the first 5 values in our `billboard100` array, and then `push` them into a new array called `top5` that contains only our values for the top 5 songs, and log that `top5` array to our console. Now we have a saved variable with our manipulated data.
 
 **Output**
 ```
 ["This Is America - Childish Gambino", "Nice For What - Drake", "God's Plan - Drake", "Psycho - Post Malone Featuring Ty Dolla $ign", "Meant To Be -Bebe Rexha & Florida Georgia Line"]
 ```
-**Note:** If you want to iterate over the entire array and not the first 5, you can do so by using `array.length`, which in this case would be `billboard100.length`, which equals 10. 
 
 ### The `forEach()` loop
 
 The `forEach()` method takes a function as an argument. We can use this method to iterate over and manipulate data in the exact same way that `for` does with a less syntax.
+
+For the next example, we are going to use backticks, which is called `template literals` to easily create strings with variables in them. This is a much easier to read way to evaluate strings with dynamic values, versus concatenating multiple strings and variables together with the `+` sign. Be aware, that this is feature is not supported in all browsers, and features like this may require JavaScript transpilers. 
 
 **Example**
 ```
@@ -130,9 +145,7 @@ billboard100.forEach(function(item, index){
 });
 ```
 
-In this example, we're reutilizing our Billboard 100 data from before, except this time, we're iterating over all of the values in the array and shouting it in all caps. This way users will understand how much we love the popular music that is played on the radio. 
-
-**Note:** We are using backticks, AKA `template literals` to easily create strings with variables in them. This is a much easier to read way to evaluate strings with dynamic values, versus concatenating multiple strings and variables together with the `+` sign. Be aware, that this is feature is not supported in all browsers, and features like this may require JavaScript transpilers. We are also incrementing the `index` by 1 in each string, so that the index of 0 is not printed out for the first item in the array, when we actually want "1".
+In this example, we're reutilizing our Billboard 100 data from before, except this time, we're iterating over all of the values in the array by default, and shouting it in all caps. This way users will understand how much we love the popular music that is played on the radio!
 
 **Output**
 ```
@@ -197,8 +210,8 @@ We got exactly what we needed using this function, but MAN, that was a lot of co
 
 **Example**
 ```
-billboard100.forEach((entry) => {
-  entry.artist.forEach((artist) => {
+billboard100.forEach(function(entry) {
+  entry.artist.forEach(function(artist) {
     console.log(artist);
   });
 });
@@ -341,8 +354,8 @@ In this example, we have a very biased loop that's not interested in moving forw
 
 You can try this...
 ```
-billboard100.forEach((entry) => {
-  entry.artist.forEach((artist) => {
+billboard100.forEach(function(entry) {
+  entry.artist.forEach(function(artist) {
     if(artist.length < 5) {
             console.log(`No! The artist ${artist} does not have enough letters!`)
             break; //kill it. it's canceled!
